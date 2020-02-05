@@ -1,0 +1,16 @@
+extends layouts/layout
+
+block content
+  h1 Inicio de sesion
+  form(action="/auth/login", method="POST")
+    .form-group
+      label(for="email")
+      input.form-control(type="text", name="email")
+    .form-group
+      label(for="password")
+      input.form-control(type="password", name="password")
+    -if (error) 
+      div.text-error
+        small= error
+    .form-group
+      input.btn.btn-primary(type="submit", name="Iniciar sesion")

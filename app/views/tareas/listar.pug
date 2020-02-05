@@ -1,0 +1,14 @@
+extends ../layouts/layout
+
+block content
+  .row
+    - for (let tarea of tareas)
+      .col-sm-4.p-2
+        .card
+          img.card-img-top(src="/public/images/task.png" alt="card")
+          .card-body
+            h5.card-title #{tarea.titulo}
+            p.card-text #{tarea.descripcion}
+            p.text-black-50
+              small usuario: #{tarea.usuarioId}
+            a.btn.btn-primary(href="#") ir

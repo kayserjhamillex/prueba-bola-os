@@ -1,0 +1,31 @@
+doctype html
+html
+  head
+    title= title
+    link(rel='stylesheet', href='/public/bootstrap/css/bootstrap.min.css')
+    //- link(rel='stylesheet', href='/public/stylesheets/style.css')
+  body
+    header
+      nav.navbar.navbar-dark.bg-dark
+        .container
+          a.navbar-brand(href="#") Final Test
+          div.justify-content-end
+          - if (!session || !session.usuario)
+            a.text-white(href="/auth/login") Iniciar sesion
+          - else
+            p.text-white #{session.usuario.nombres}
+            button.navbar-toggler(type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation")
+              span.navbar-toggler-icon
+            #navbarText.collapse.navbar-collapse
+              ul.navbar-nav.mr-auto
+                li.nav-item.active
+                  a.nav-link(href="/auth/logout")
+                    | Cerrar sesion 
+    section.main
+      .container
+        block content
+    footer
+      .container
+        p foot
+    script(src="/public/javascripts/jquery-3.4.1.min.js")
+    script(src="/public/bootstrap/js/bootstrap.min.js")

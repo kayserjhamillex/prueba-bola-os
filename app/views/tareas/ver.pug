@@ -1,0 +1,37 @@
+extends ../layouts/layout
+
+block content
+  .p-2
+    .card
+      //- img.card-img-top(src="/public/images/task.png" alt="card")
+      .card-body
+        h5.card-title #{tarea.titulo}
+        p.card-text 
+        span #{tarea.descripcion} 
+        - if (tarea.finalizado)
+          span (finalizado)
+        - else 
+          span (activo)
+
+        p.text-black-50
+          small usuario: #{tarea.usuarioId}
+        a.btn.btn-primary(href="#") ir
+  br
+  h4 Actividades de la tarea
+  ul
+    - for (let actividad of tarea.Actividads)
+      li 
+        p
+          strong #{actividad.titulo}
+        p #{actividad.descripcion}
+  br
+  h5 Nueva Actividad
+  form(method="post", action="/tareas/"+tarea.id+"/actividades")
+    p.form-group
+      label(for="titulo")
+      input.form-control(type="text", name="titulo")
+    p.form-group
+      label(for="descripcion")
+      input.form-control(type="text", name="descripcion")
+    p.form-group
+      input(type="submit", value="Guardar")

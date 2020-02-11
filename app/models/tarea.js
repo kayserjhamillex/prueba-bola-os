@@ -15,6 +15,7 @@ module.exports = (sequelize, DataTypes) => {
   Tarea.associate = function(models) {
     Tarea.belongsTo(models.Usuario, {foreignKey: 'usuarioId'});
     Tarea.hasMany(models.Actividad, {foreignKey: 'tareaId'});
+    Tarea.hasMany(models.Sprint, {foreignKey: 'tareaId'});
   };
   return Tarea;
 };

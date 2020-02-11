@@ -2,7 +2,15 @@ const db = require('../models');
 
 exports.listar = async function(req, res) {
   try {
-    const tareas = await db.Tarea.findAll();
+    const tareas = await db.Tarea.findAll({
+      include: [
+        {
+          model: db.Usuario,
+          attributes: ['nombres', 'apellidos'],
+        }, 
+
+      ],
+    });
     res.render('tareas/listar', {session: req.session, tareas, error: null});
   } catch (error) {
     res.render('tareas/listar', {session: req.session, tareas: null, error: 'error interno'})

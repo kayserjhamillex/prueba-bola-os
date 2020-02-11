@@ -1,5 +1,4 @@
 extends ../layouts/layout
-
 block content
   .row
     - for (let tarea of tareas)
@@ -11,4 +10,5 @@ block content
             p.card-text #{tarea.descripcion}
             p.text-black-50
               small usuario: #{tarea.usuarioId}
-            a.btn.btn-primary(href="#") ir
+              //- small usuario: #{tarea.Usuario.nombres}+#{tarea.Usuario.apellidos}
+            a(href="/tareas/"+tarea.id).btn.btn-primary ir

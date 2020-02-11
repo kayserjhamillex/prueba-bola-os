@@ -15,7 +15,7 @@ block content
 
         p.text-black-50
           small usuario: #{tarea.usuarioId}
-        a.btn.btn-primary(href="#") ir
+            a.btn.btn-primary(href="/usuario/"+tarea.usuarioId) ir
   br
   h4 Actividades de la tarea
   ul
@@ -23,7 +23,8 @@ block content
       li 
         p
           strong #{actividad.titulo}
-        p #{actividad.descripcion}
+        p #{actividad.descripcion}  
+          a.btn.btn-danger(href="#") Borrar
   br
   h5 Nueva Actividad
   form(method="post", action="/tareas/"+tarea.id+"/actividades")

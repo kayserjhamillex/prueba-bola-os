@@ -8,6 +8,7 @@ async function createSchema() {
     await db.Usuario.sync({force: true});
     await db.Tarea.sync({force: true});
     await db.Actividad.sync({force: true});
+    await db.Sprint.sync({force: true});
 
   } catch(err) {
     console.log('ERROR: ', err);

@@ -5,11 +5,11 @@ const now = new Date();
 const {usuarios, tareas} = require('./data');
 
 const sprints = [
-  {fechaInicio:'2020-02-14',fechaCierre:'2020-02-14',fechaReunion:'2020-02-14',titulo:'sprint1',descripcion:'desarrollo de api'},
-  {fechaInicio:'2020-02-14',fechaCierre:'2020-02-14',fechaReunion:'2020-02-14',titulo:'sprint2',descripcion:'desarrollo de crud en admin'},
-  {fechaInicio:'2020-02-14',fechaCierre:'2020-02-14',fechaReunion:'2020-02-14',titulo:'sprint3',descripcion:'desarrollo diseño de pagina'},
-  {fechaInicio:'2020-02-14',fechaCierre:'2020-02-14',fechaReunion:'2020-02-14',titulo:'sprint4',descripcion:'desarrollo de funcionalidad'},
-  {fechaInicio:'2020-02-14',fechaCierre:'2020-02-14',fechaReunion:'2020-02-14',titulo:'sprint5',descripcion:'desarrollo de app movil'},
+  {fechaInicio:'2020-02-14',fechaCierre:'2020-02-14',fechaReunion:'2020-02-14',titulo:'sprint1',descripcion:'desarrollo de api',tareaId:1},
+  {fechaInicio:'2020-02-14',fechaCierre:'2020-02-14',fechaReunion:'2020-02-14',titulo:'sprint2',descripcion:'desarrollo de crud en admin',tareaId:4},
+  {fechaInicio:'2020-02-14',fechaCierre:'2020-02-14',fechaReunion:'2020-02-14',titulo:'sprint3',descripcion:'desarrollo diseño de pagina',tareaId:7},
+  {fechaInicio:'2020-02-14',fechaCierre:'2020-02-14',fechaReunion:'2020-02-14',titulo:'sprint4',descripcion:'desarrollo de funcionalidad',tareaId:3},
+  {fechaInicio:'2020-02-14',fechaCierre:'2020-02-14',fechaReunion:'2020-02-14',titulo:'sprint5',descripcion:'desarrollo de app movil',tareaId:6},
 ];
 
 async function insertData() {

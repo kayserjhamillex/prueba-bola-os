@@ -13,7 +13,7 @@ module.exports = (sequelize, DataTypes) => {
   );
   
   Sprint.associate = function(models) {
-    Sprint.belongsTo(models.Tarea, {foreignKey: 'usuarioId'});
+    Sprint.belongsTo(models.Tarea, {foreignKey: 'tareaId'});
   };
   return Sprint;
 };
